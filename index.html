@@ -18,11 +18,30 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+   
+    const callButtons = document.querySelectorAll('.call-btn');
+
+    callButtons.forEach(button => {
+      button.addEventListener('click', function () {
+       
+        callButtons.forEach(btn => {
+          btn.classList.remove('border-2', 'border-black');
+        });
+
+        
+        this.classList.add('border-2', 'border-black');
+      });
+    });
+  });
+</script>
+
 <body class="bg-[#41FF6B]/5">
 
     <!-- Nav-Section -->
-     <div id="nav-parent " class="flex justify-between p-7 h-[100px] bg-[#ffff]">
-        <div class="flex gap-5 items-center justify-center">
+     <div id="nav-parent" class="flex max-[692px]:flex-col  justify-between items-center p-5 max-[692px]:gap-4 min-h-[100px]  bg-[#ffff]">
+        <div class="flex gap-4 items-center justify-center">
             <div>
                 <img class="w-[50px] h-[50px]" src="./assets/logo.png" alt="">
             </div>
@@ -30,8 +49,8 @@
                 <h1>Emergency<br>Service</h1>
             </div>
         </div>
-        <div class="flex items-center gap-[40px] ">
-            <div class="w-[123px] h-[52px] flex  rounded-full p-2  bg-[#41FF6B]/10  items-center justify-center gap-2 text-[#000000]  font-black text-[16px]">
+        <div class="flex items-center gap-4  max-[690px]:gap-2 justify-end max-[692px]:justify-center ">
+            <div class="w-[123px]  h-[52px] flex   rounded-full p-2  bg-[#41FF6B]/10  items-center justify-center gap-2 text-[#000000]  font-black text-[16px]">
                 <span class="w-[12px] h-[24px]" id="heart-count">0</span>
                 <img class="w-[30px] h-[30px] "  src="./assets/heart.png" alt="">
                 
@@ -54,23 +73,24 @@
 
 
      <!-- Hero-Section -->
-     <section id="Hero-section-parent" class="  w-[100%] h-[239px] items-center justify-center flex flex-col text-center bg-red-600" style=" background: linear-gradient(90deg, #013223 0%, #006747 50%, #005D40 60%, #013223 100%);" >
+     <section id="Hero-section-parent" class="max-[692px]:mt-[55px]  w-full max-w-none h-[239px]  items-center justify-center flex flex-col text-center bg-red-600" style=" background: linear-gradient(90deg, #013223 0%, #006747 50%, #005D40 60%, #013223 100%);" >
         <div class="mb-[11px]">
-            <img class="w-[90px] h-[90px] mt-[20px] " src="./assets/logo.png" alt="">
+            <img class="w-[90px] max-[690px]:w-[65px] h-auto max-[690px]:h-auto mt-[20px] " src="./assets/logo.png" alt="">
         </div>
         <div>
-            <h1 class="text-[#ffffff] font-semibold text-[40px] mb-[11px]">জরুরি সেবা ডিরেক্টরি</h1>
-            <p class="text-[#ffffff] font-semibold text-[20px] mb-[21px]">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
+            <h1 class="text-[#ffffff] font-semibold text-[40px] mb-[11px] max-[690px]:text-[25px] ">জরুরি সেবা ডিরেক্টরি</h1>
+            <p class="text-[#ffffff] font-semibold text-[20px] mb-[21px] max-[690px]:text-[12px] px-2">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
         </div>
 
      </section>
 
      <!-- Main-Section -->
-     <section id="main-section" class=" w-[1800px] h-[1140px] mt-[px] p-5 flex gap-8">
+    <section id="main-section" class="w-full max-w-[1800px] mx-auto  h-auto mt-[6px] p-4 md:p-8 flex flex-col xl:flex-row gap-8 items-start">
 
         <!-- Emergency-Hotline-Cards -->
-        <div id="Emergency-Hotline-Cards" class=" grid grid-cols-3 gap-[10px]">
-            <div id="card-parent" class="card bg-[#ffffff] w-[320px] h-[345px] rounded-lg shadow-lg p-4 ">
+        <div id="Emergency-Hotline-Cards" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 justify-items-center max-w-7xl mx-auto ">
+            <!-- card-1 -->
+            <div id="card-parent" class="card bg-[#ffffff] w-full max-w-[360px]  min-h-[345px] rounded-lg shadow-lg p-4 flex flex-col justify-between">
                 <div class="flex justify-between items-center ">
                     <div class="w-[60px] h-[60px] rounded-lg bg-[#FFE3E2] items-center flex justify-center"><img class="w-[32px] h-[32px]" src="./assets/emergency.png" alt=""></div>
                     <div class="w-[24px] h-[24px] ">
@@ -100,7 +120,7 @@
             </div>
             <!-- card-2 -->
 
-             <div id="card-parent" class="card bg-[#ffffff] w-[320px] h-[345px] rounded-lg shadow-lg p-4 ">
+             <div id="card-parent" class="card bg-[#ffffff] w-full max-w-[360px] min-h-[345px] rounded-lg shadow-lg p-4  flex flex-col justify-between">
                 <div class="flex justify-between items-center ">
                     <div class="w-[60px] h-[60px] rounded-lg bg-[#FFE3E2] items-center flex justify-center"><img class="w-[32px] h-[32px]" src="./assets/police.png" alt=""></div>
                     <div class="w-[24px] h-[24px] ">
@@ -116,7 +136,7 @@
                     <p class=" text-gray-500  font-regular text-[18px] bg-[#F2F2F2] rounded-full mb-[20px] w-fit p-2">পুলিশ</p>
                    <div class="gap-[8px] flex">
                      <button class="copy-btn border-2 border-gray-200 w-[182px] h-[45px] rounded-lg text-gray-400"><i class="fa-regular fa-copy"></i>Copy</button>
-                    <button class="call-btn border-2 border-black bg-[#00A63E] w-[182px] h-[45px] rounded-lg text-[#ffffff]"><i class="fa-solid fa-phone"></i> Call</button>
+                    <button class="call-btn border-2 bg-[#00A63E] w-[182px] h-[45px] rounded-lg text-[#ffffff]"><i class="fa-solid fa-phone"></i> Call</button>
                    </div>
                 </div>
                <!-- card-2 -->
@@ -128,7 +148,7 @@
             </div>
             <!-- card-3 -->
 
-             <div id="card-parent" class="card bg-[#ffffff] w-[320px] h-[345px] rounded-lg shadow-lg p-4 ">
+             <div id="card-parent" class="card bg-[#ffffff] w-full max-w-[360px] min-h-[345px] rounded-lg shadow-lg p-4  flex flex-col justify-between">
                 <div class="flex justify-between items-center ">
                     <div class="w-[60px] h-[60px] rounded-lg bg-[#FFE3E2] items-center flex justify-center"><img class="w-[32px] h-[32px]" src="./assets/fire-service.png" alt=""></div>
                     <div class="w-[24px] h-[24px] ">
@@ -157,7 +177,7 @@
 
             <!-- card-4 -->
 
-             <div id="card-parent" class="card bg-[#ffffff] w-[320px] h-[345px] rounded-lg shadow-lg p-4 ">
+             <div id="card-parent" class="card bg-[#ffffff] w-full max-w-[360px] min-h-[345px] rounded-lg shadow-lg p-4 flex flex-col justify-between ">
                 <div class="flex justify-between items-center ">
                     <div class="w-[60px] h-[60px] rounded-lg bg-[#FFE3E2] items-center flex justify-center"><img class="w-[32px] h-[32px]" src="./assets/ambulance.png" alt=""></div>
                     <div class="w-[24px] h-[24px] ">
@@ -185,7 +205,7 @@
 
             <!-- card-5 -->
 
-             <div id="card-parent" class="card bg-[#ffffff] w-[320px] h-[345px] rounded-lg shadow-lg p-4 ">
+             <div id="card-parent" class="card bg-[#ffffff] w-full max-w-[360px] min-h-[345px] rounded-lg shadow-lg p-4 flex flex-col justify-between">
                 <div class="flex justify-between items-center ">
                     <div class="w-[60px] h-[60px] rounded-lg bg-[#FFE3E2] items-center flex justify-center"><img class="w-[32px] h-[32px]" src="./assets/emergency.png" alt=""></div>
                     <div class="w-[24px] h-[24px] ">
@@ -214,7 +234,7 @@
 
             <!-- card-6 -->
 
-             <div id="card-parent" class="card bg-[#ffffff] w-[320px] h-[345px] rounded-lg shadow-lg p-4 ">
+             <div id="card-parent" class="card bg-[#ffffff] w-full max-w-[360px] min-h-[345px] rounded-lg shadow-lg p-4 flex flex-col justify-between ">
                 <div class="flex justify-between items-center ">
                     <div class="w-[60px] h-[60px] rounded-lg bg-[#FFE3E2] items-center flex justify-center"><img class="w-[32px] h-[32px]" src="./assets/emergency.png" alt=""></div>
                     <div class="w-[24px] h-[24px] ">
@@ -243,7 +263,7 @@
             </div>
             <!-- card-7 -->
 
-             <div id="card-parent" class="card bg-[#ffffff] w-[320px] h-[345px] rounded-lg shadow-lg p-4 ">
+             <div id="card-parent" class="card bg-[#ffffff] w-full max-w-[360px] min-h-[345px] rounded-lg shadow-lg p-4 flex flex-col justify-between">
                 <div class="flex justify-between items-center ">
                     <div class="w-[60px] h-[60px] rounded-lg bg-[#FFE3E2] items-center flex justify-center"><img class="w-[32px] h-[32px]" src="./assets/emergency.png" alt=""></div>
                     <div class="w-[24px] h-[24px] ">
@@ -270,7 +290,7 @@
 
             </div>
             <!-- card-8 -->
-              <div id="card-parent" class="card bg-[#ffffff] w-[320px] h-[345px] rounded-lg shadow-lg p-4 ">
+              <div id="card-parent" class="card bg-[#ffffff] w-full max-w-[360px] min-h-[345px] rounded-lg shadow-lg p-4 flex flex-col justify-between ">
                 <div class="flex justify-between items-center ">
                     <div class="w-[60px] h-[60px] rounded-lg bg-[#FFE3E2] items-center flex justify-center"><img class="w-[32px] h-[32px]" src="./assets/emergency.png" alt=""></div>
                     <div class="w-[24px] h-[24px] ">
@@ -296,7 +316,7 @@
 
             </div>
             <!-- card-9 -->
-              <div id="card-parent" class="card bg-[#ffffff] w-[320px] h-[345px] rounded-lg shadow-lg p-4">
+              <div id="card-parent" class="card bg-[#ffffff] w-full max-w-[360px] min-h-[345px] rounded-lg shadow-lg p-4 flex flex-col justify-between">
                 <div class="flex justify-between items-center ">
                     <div class="w-[60px] h-[60px] rounded-lg bg-[#FFE3E2] items-center flex justify-center"><img class="w-[32px] h-[32px]" src="./assets/emergency.png" alt=""></div>
                     <div class="w-[24px] h-[24px] ">
@@ -333,14 +353,14 @@
         </div>
 
         <!-- Call History -->
-        <div id="Call-History" class="bg-[#ffffff] rounded-lg shadow-lg w-[425px] h-[1088px]" >
-           <div class="flex justify-between p-4 items-center">
+        <div id="Call-History" class="bg-[#ffffff] rounded-lg shadow-lg w-full max-w-[425px] h-auto max-h-[1088px flex flex-col mx-auto]" >
+           <div class="flex justify-between p-4 items-center gap-2">
             <div class="">
                 
-                <h1 class="text-[#111111]  gap-2 flex items-center mt-[]  font-medium text-[20px]"> <i class="fa-solid fa-clock-rotate-left text-gray-400"></i>Call History</h1>
+                <h1 class="text-[#111111]  gap-2 flex items-center mt-[]  font-medium text-[18px] sm:text-[20px]"> <i class="fa-solid fa-clock-rotate-left text-gray-400"></i>Call History</h1>
             </div>
             <div>
-                <button id="clear-history" class="bg-[#00A63E] rounded-full text-[#ffffff] w-[114px] h-[52px]">Clear</button>
+                <button id="clear-history" class="bg-[#00A63E] rounded-full text-[#ffffff] min-w-[90px] sm:w-[114px]  h-[45px] sm:h-[52px] font-medium text-sm sm:text-base">Clear</button>
             </div>
            </div>
           <div id="history-container" class="p-4 space-y-3">
